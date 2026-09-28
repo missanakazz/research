@@ -1,0 +1,17 @@
+backend:
+  name: github
+  repo: missanakazz/research # O seu repositório do GitHub
+  branch: main # Sua branch principal
+
+media_folder: "images" # Onde as fotos enviadas pelo painel vão ficar salvas
+public_folder: "/images"
+
+collections:
+  - name: "artigos"
+    label: "Artigos"
+    folder: "content/artigos" # Pasta onde os posts ficarão salvos
+    create: true
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Publicado em", name: "date", widget: "datetime"}
+      - {label: "Conteúdo", name: "body", widget: "markdown"}
