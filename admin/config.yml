@@ -2,6 +2,7 @@ backend:
   name: github
   repo: missanakazz/research
   branch: main
+  site_id: SEU-SITE-DO-NETLIFY.netlify.app # Coloque aqui o nome do site que o Netlify gerou para você
 
 media_folder: "images"
 public_folder: "/images"
