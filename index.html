@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Kazz | Pesquisa & Esporte</title>
+    <!-- Fontes Google com pegada editorial moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --surface: #141414;
+            --neon-green: #00ff66;
+            --neon-yellow: #ffee00;
+            --neon-turquoise: #00e5ff;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border: #262626;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: -0.03em;
+        }
+
+        /* Navbar estilo Wired */
+        header {
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--neon-green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--neon-turquoise);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 9rem auto 5rem;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1.8fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .hero-content h1 span {
+            color: var(--neon-yellow);
+            background: #1a1a00;
+            padding: 0 5px;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--neon-green);
+            color: #000;
+            padding: 0.85rem 1.75rem;
+            border-radius: 0px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            transition: transform 0.1s, background 0.2s;
+        }
+
+        .btn:hover {
+            background: #00cc52;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--neon-turquoise);
+            border: 2px solid var(--neon-turquoise);
+        }
+
+        .btn-outline:hover {
+            background: var(--neon-turquoise);
+            color: #000;
+        }
+
+        .hero-img-wrapper {
+            position: relative;
+        }
+
+        .hero-img-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--neon-turquoise);
+            z-index: -1;
+        }
+
+        .hero-img img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            filter: grayscale(20%) contrast(110%);
+        }
+
+        /* Seções */
+        section {
+            max-width: 1200px;
+            margin: 0 auto 6rem;
+            padding: 0 2rem;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        section h2::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        section h2 span {
+            color: var(--neon-green);
+        }
+
+        /* Grid estilo Revista */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            position: relative;
+            transition: border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: var(--neon-yellow);
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--neon-turquoise);
+            margin-bottom: 0.75rem;
+            display: block;
+            letter-spacing: 0.1em;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card a {
+            color: var(--neon-green);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Seção YouTube / Bate-Papo com destaque futurista */
+        .youtube-banner {
+            background: linear-gradient(135deg, #0f172a 0%, #050505 100%);
+            border: 2px solid var(--neon-yellow);
+            padding: 4rem 3rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .youtube-banner h2 {
+            border: none;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            color: var(--neon-yellow);
+        }
+
+        .youtube-banner p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Rodapé */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: var(--neon-green);
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                margin-top: 7rem;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .youtube-banner {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Ana Kazz<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#sobre">Quem Sou</a></li>
+                <li><a href="#artigos">Artigos</a></li>
+                <li><a href="#noticias">Notícias</a></li>
+                <li><a href="#youtube">YouTube</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Fã-cultura, Esporte & <span>Dinâmicas Globais</span></h1>
+                <p>Investigando o comportamento de consumo esportivo, identidades e estratégias de engajamento em ecossistemas femininos e masculinos.</p>
+                <div class="btn-group">
+                    <a href="#artigos" class="btn">Explorar Artigos</a>
+                    <a href="#youtube" class="btn btn-outline">Assistir Bate-Papo</a>
+                </div>
+            </div>
+            <div class="hero-img-wrapper">
+                <div class="hero-img">
+                    <!-- Substitua pelo link da sua foto real -->
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Ana Kazz">
+                </div>
+            </div>
+        </section>
+
+        <!-- Quem Sou -->
+        <section id="sobre">
+            <h2><span>01.</span> Quem Sou</h2>
+            <div style="background: var(--surface); border: 1px solid var(--border); padding: 2.5rem;">
+                <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1rem;">
+                    Pesquisadora, estrategista esportiva e doutoranda em Administração na PUC-Rio. Minha investigação acadêmica foca no comportamento de consumo de fãs de futebol global, cruzando métricas quantitativas (via SPSS) com análises profundas de engajamento e fandoms.
+                </p>
+                <p style="color: var(--text-muted); font-size: 1.05rem;">
+                    Atuo também como consultora de gestão esportiva, jornalista e realizo produções de conteúdo sobre o ecossistema dos esportes.
+                </p>
+            </div>
+        </section>
+
+        <!-- Artigos -->
+        <section id="artigos">
+            <h2><span>02.</span> Artigos & Pesquisa</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <span class="card-tag">Paper / Doutorado</span>
+                    <h3>Dimensões do Envolvimento de Fãs no Futebol</h3>
+                    <p>Análise empírica abordando as particularidades do consumo e engajamento em torcidas de equipes femininas e masculinas.</p>
+                    <a href="#">Acessar Publicação &rarr;</a>
+                </div>
+                <div class="card">
+                    <span class="card-tag">Congresso / 2026</span>
+                    <h3>Intenções de Presença e Demanda no Esporte</h3>
+                    <p>Estudo focado nas projeções e fatores determinantes para grandes eventos e campeonatos internacionais.</p>
+                    <a href="#">Ler Resumo &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notícias -->
+        <section id="noticias">
+            <h2><span>03.</span> Notícias & Atualizações</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <span class="card-tag">Agenda acadêmica</span>
+                    <h3>Apresentação no XI Encontro de Estudos em Estratégia</h3>
+                    <p>Discussão dos achados recentes sobre intenções de comparecimento e consumo esportivo.</p>
+                    <span style="font-size: 0.8rem; color: var(--neon-yellow);">Junho, 2026</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bate-papo / YouTube -->
+        <section id="youtube">
+            <div class="youtube-banner">
+                <div>
+                    <h2>Bate-Papo & Vídeos</h2>
+                    <p>Conversas profundas, bastidores da pesquisa acadêmica e análises do mercado esportivo direto no canal do YouTube.</p>
+                </div>
+                <div>
+                    <a href="https://youtube.com" target="_blank" class="btn" style="background: var(--neon-yellow);">Acessar Canal &nearr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contato">
+            <h2><span>04.</span> Contato</h2>
+            <div style="background: var(--surface); border: 1px solid var(--border); padding: 2.5rem;">
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">Disponível para colaborações em pesquisas, consultorias de estratégia esportiva, palestras e trocas acadêmicas.</p>
+                <p style="color: var(--text-main); font-weight: 600;">E-mail: <span style="color: var(--neon-turquoise);">ana.pesquisa@instituicao.br</span></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 Ana Kazz. Desenvolvido com foco em <span>estratégia e inovação</span>.</p>
+    </footer>
+
+</body>
+</html>
