@@ -265,28 +265,50 @@
             border: 1px solid var(--border);
         }
 
-        /* YouTube Banner */
+        /* YouTube Banner & Playlist */
         .youtube-banner {
             background: linear-gradient(135deg, #0f172a 0%, #050505 100%);
             border: 2px solid var(--neon-yellow);
-            padding: 4rem 3rem;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
+            padding: 3rem 2rem;
+        }
+
+        .youtube-header {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
         }
 
         .youtube-banner h2 {
             border: none;
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 2.2rem;
             color: var(--neon-yellow);
         }
 
         .youtube-banner p {
             color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .playlist-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            background: #000;
+            border: 1px solid var(--border);
+        }
+
+        .playlist-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         /* Footer */
@@ -314,9 +336,9 @@
             .nav-links {
                 display: none;
             }
-            .youtube-banner {
-                grid-template-columns: 1fr;
-                padding: 2rem;
+            .youtube-header {
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
     </style>
@@ -329,6 +351,7 @@
             <a href="#" class="logo">Ana Kazz<span>.</span></a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#research">The Research</a></li>
                 <li><a href="#articles">Articles</a></li>
                 <li><a href="#news">News</a></li>
                 <li><a href="#youtube">YouTube</a></li>
@@ -366,12 +389,51 @@
             </div>
         </section>
 
+        <!-- The Research -->
+        <section id="research">
+            <h2><span>02.</span> The Research</h2>
+            <div style="background: var(--surface); border: 1px solid var(--border); padding: 2.5rem; margin-bottom: 3rem;">
+                <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
+                    This ongoing doctoral study investigates global football fan consumption behavior, comparing national teams across different cultural and structural ecosystems. By bridging quantitative psychographic metrics (such as the Psychological Continuum Model) with fandom analytics, the research explores what drives stadium attendance, fan identities, and engagement strategies across both women's and men's football.
+                </p>
+            </div>
+
+            <!-- Data Collection Updates -->
+            <h2><span>02.1</span> Data Collection Updates</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <span class="card-tag" style="color: var(--neon-green);">🇧🇷 Brazil</span>
+                    <h3>Finished</h3>
+                    <p style="font-size: 1.2rem; font-weight: 600; color: var(--text-main);">836 respondentes</p>
+                </div>
+                <div class="card">
+                    <span class="card-tag" style="color: var(--neon-green);">🇦🇺 Australia</span>
+                    <h3>Finished</h3>
+                    <p style="font-size: 1.2rem; font-weight: 600; color: var(--text-main);">640 respondentes</p>
+                </div>
+                <div class="card">
+                    <span class="card-tag" style="color: var(--neon-yellow);">🇩🇪 Germany</span>
+                    <h3>In Progress</h3>
+                    <p style="font-size: 1.2rem; font-weight: 600; color: var(--text-main);">140 respondentes</p>
+                </div>
+                <div class="card">
+                    <span class="card-tag" style="color: var(--neon-yellow);">🇺🇸 USA</span>
+                    <h3>In Progress</h3>
+                    <p style="font-size: 1.2rem; font-weight: 600; color: var(--text-main);">345 respondentes</p>
+                </div>
+                <div class="card">
+                    <span class="card-tag" style="color: var(--neon-turquoise);">🇯🇵 Japan</span>
+                    <h3>Will Start Soon</h3>
+                    <p style="font-size: 1rem; color: var(--text-muted);">Preparation phase</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Articles -->
         <section id="articles">
-            <h2><span>02.</span> Articles & Research</h2>
+            <h2><span>03.</span> Articles & Research</h2>
             <div class="card-grid">
                 
-                <!-- Artigo Movido 1 -->
                 <div class="card">
                     <span class="card-tag">Research • Upcoming</span>
                     <img src="onlyif.jpg" alt="Only If Research" class="news-img-small">
@@ -380,7 +442,6 @@
                     <span style="color: var(--neon-yellow); font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">stay tuned</span>
                 </div>
 
-                <!-- Artigo Movido 2 -->
                 <div class="card">
                     <span class="card-tag">Research • Upcoming</span>
                     <h3>The value of the Brazilian women's national team fan</h3>
@@ -388,7 +449,6 @@
                     <span style="color: var(--neon-yellow); font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">stay tuned</span>
                 </div>
 
-                <!-- Novo Artigo Incluído -->
                 <div class="card">
                     <span class="card-tag">Research • Upcoming</span>
                     <h3>Comparing Brazilian Team Fans</h3>
@@ -436,7 +496,7 @@
 
         <!-- News -->
         <section id="news">
-            <h2><span>03.</span> News & Updates</h2>
+            <h2><span>04.</span> News & Updates</h2>
             <div class="card-grid">
                 
                 <div class="card">
@@ -482,14 +542,6 @@
                 </div>
 
                 <div class="card">
-                    <span class="card-tag">Professional Update</span>
-                    <img src="26_congresso.jpg" alt="Update Image" class="news-img-small">
-                    <h3>Strategic Developments & Networking</h3>
-                    <p>Recent professional activities and milestones in sports management and academic research.</p>
-                    <a href="https://lnkd.in/p/dn7xdEAJ" target="_blank">Read More &rarr;</a>
-                </div>
-
-                <div class="card">
                     <span class="card-tag">Webinar Recording</span>
                     <h3>Football Fans Research Discussion</h3>
                     <p>If you are interested in updates on my football fans research, check out the recording of this webinar. Special thanks to De Waele Jean-Michel for the invitation, and to the participants for the high-level discussion.</p>
@@ -502,19 +554,25 @@
         <!-- YouTube / Chat -->
         <section id="youtube">
             <div class="youtube-banner">
-                <div>
-                    <h2>Video & Chats</h2>
-                    <p>Check out my channel for talks, interviews, and discussions on sports management, fan behavior, and market analyses.</p>
+                <div class="youtube-header">
+                    <div>
+                        <h2>Video & Chats</h2>
+                        <p>Check out my playlist and channel for talks, interviews, and discussions on sports management and fan behavior.</p>
+                    </div>
+                    <div>
+                        <a href="https://www.youtube.com/@anakazzy" target="_blank" class="btn" style="background: var(--neon-yellow); display: inline-block; text-align: center;">Visit Channel &nearr;</a>
+                    </div>
                 </div>
-                <div>
-                    <a href="https://www.youtube.com/@anakazzy" target="_blank" class="btn" style="background: var(--neon-yellow); display: inline-block; text-align: center;">Visit Channel &nearr;</a>
+                <!-- YouTube Playlist Embed -->
+                <div class="playlist-container">
+                    <iframe src="https://www.youtube.com/embed/videoseries?list=PLSuv5YPW9lCfi0OugSdy12me2a_2qzLM2" title="YouTube playlist" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
 
         <!-- Contact -->
         <section id="contact">
-            <h2><span>04.</span> Contact</h2>
+            <h2><span>05.</span> Contact</h2>
             <div style="background: var(--surface); border: 1px solid var(--border); padding: 2.5rem;">
                 <p style="color: var(--text-muted); margin-bottom: 1rem;">Open for research collaborations, sports strategy consulting, speaking engagements, and academic discussions.</p>
                 <p style="color: var(--text-main); font-weight: 600;">Email: <span style="color: var(--neon-turquoise);">ana.costa@phd.iag.puc-rio.br</span></p>
