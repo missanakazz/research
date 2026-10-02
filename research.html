@@ -1,1 +1,334 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Research | Ana Kazz</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --surface: #141414;
+            --neon-green: #00ff66;
+            --neon-yellow: #ffee00;
+            --neon-turquoise: #00e5ff;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border: #262626;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: -0.03em;
+        }
+
+        /* Navbar */
+        header {
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--neon-green);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--neon-turquoise);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 9rem auto 5rem;
+            padding: 0 2rem;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .page-title span {
+            color: var(--neon-yellow);
+        }
+
+        .section-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-box h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--neon-green);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-box h3 {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--neon-turquoise);
+        }
+
+        .section-box p, .section-box li {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-box ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .markets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .market-card {
+            background: #1a1a1a;
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+        }
+
+        .market-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-back {
+            display: inline-block;
+            background: transparent;
+            color: var(--neon-turquoise);
+            border: 2px solid var(--neon-turquoise);
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .btn-back:hover {
+            background: var(--neon-turquoise);
+            color: #000;
+        }
+
+        /* Image styling guidance */
+        .content-img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: var(--neon-green);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Ana Kazz<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#research">The Research</a></li>
+                <li><a href="index.html#articles">Articles</a></li>
+                <li><a href="index.html#news">News</a></li>
+                <li><a href="index.html#youtube">YouTube</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="container">
+        <a href="index.html#research" class="btn-back">&larr; Back to Home</a>
+        
+        <h1 class="page-title">The New Dimension of <span>Football Fandom</span></h1>
+        <p style="color: var(--text-muted); margin-bottom: 3rem; font-size: 1.2rem;">Detailed overview of the doctoral research project on global football fan consumption behavior and inclusive dynamics[cite: 3].</p>
+
+        <!-- 1. The New Dimension of Football Fandom is Inclusive! -->
+        <div class="section-box">
+            <h2>The New Dimension of Football Fandom is Inclusive!</h2>
+            <!-- Dica de Imagem: Pode colocar uma imagem temática aqui tal como <img src="nome-da-imagem.jpg" alt="Fandom" class="content-img"> -->
+            <p>Original idea developed by Ana CPR Costa. Implementation must be previously agreed with the author[cite: 2].</p>
+        </div>
+
+        <!-- 2. A PhD Academic Journey in All Continents with a Deep Dive in Brazil -->
+        <div class="section-box">
+            <h2>A PhD Academic Journey in All Continents with a Deep Dive in Brazil</h2>
+            <p>Started at the German Sport University and continued at Pontifical Catholic University of Rio de Janeiro (PUC-Rio)[cite: 3].</p>
+            <ul>
+                <li>Applies theories from economics, sociology, and marketing to assess markets in different continents[cite: 3].</li>
+                <li>Uses quantitative and qualitative methodology (surveys, focus groups with fans, and interviews with key football stakeholders)[cite: 3].</li>
+                <li>Investigates the consumer profiles of women's and men's football national teams fans (socio-demographics, behaviors, and image)[cite: 3].</li>
+                <li>Delivers comparative insights across the assessed markets[cite: 3].</li>
+            </ul>
+        </div>
+
+        <!-- 3. Problems & Motivations -->
+        <div class="section-box">
+            <h2>Problems & Motivations</h2>
+            <ul>
+                <li>Women's Football (WF) and Men's Football (MF) follow different development pathways, reflected in distinct fan base profiles[cite: 4].</li>
+                <li>Academic knowledge about WF is scarce, especially when it comes to fans and the perceived image of the sport[cite: 4].</li>
+                <li>There is untapped potential for social and business transformation in football by fostering inclusive studies[cite: 4].</li>
+                <li>A global and comparative perspective on fans' consumption behaviour pushes this development, preventing WF from being appropriated by a discourse of hegemonic masculinity[cite: 4].</li>
+            </ul>
+        </div>
+
+        <!-- 4. 1 Research Project Made of 3 Separate Studies -->
+        <div class="section-box">
+            <h2>1 Research Project Made of 3 Separate Studies</h2>
+            <h3>Study 1</h3>
+            <p>Fans' connection to the Brazilian football teams (16 interviews with stakeholders, 5 focus groups with fans, 834 fans responded to an online survey)[cite: 5].</p>
+            <h3>Study 2</h3>
+            <p>Global X-ray of the consumption behaviour profile of national teams' football fans via online surveys in different countries[cite: 5].</p>
+            <h3>Study 3</h3>
+            <p>The perceived image of national teams: an international comparison via online surveys in different countries[cite: 5].</p>
+        </div>
+
+        <!-- 5. Research Questions -->
+        <div class="section-box">
+            <h2>Research Questions</h2>
+            <h3>Study 1</h3>
+            <p>How do Brazilian football fans perceive their national teams? What are the differences and similarities between women's and men's teams[cite: 6]?</p>
+            <h3>Study 2</h3>
+            <p>What are the distinct psychographic profiles and consumption behaviours of women's football national team fans across assessed countries[cite: 6]?</p>
+            <h3>Study 3</h3>
+            <p>What are the distinct psychographic profiles and consumption behaviours of men's football national team fans across assessed countries[cite: 6]?</p>
+        </div>
+
+        <!-- 6. Markets -->
+        <div class="section-box">
+            <h2>Markets*</h2>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">*Partner researchers from this institution[cite: 7].</p>
+            <div class="markets-grid">
+                <div class="market-card">
+                    <h4>Brazil - PUC-Rio</h4>
+                    <p style="color: var(--neon-green); font-size: 0.9rem; font-weight: 600;">Done</p>
+                </div>
+                <div class="market-card">
+                    <h4>Australia - Curtin University & Football Supporters Association Australia</h4>
+                    <p style="color: var(--neon-green); font-size: 0.9rem; font-weight: 600;">Done</p>
+                </div>
+                <div class="market-card">
+                    <h4>Germany - German Sport University</h4>
+                    <p style="color: var(--neon-yellow); font-size: 0.9rem; font-weight: 600;">Taking place</p>
+                </div>
+                <div class="market-card">
+                    <h4>USA - Widener University</h4>
+                    <p style="color: var(--neon-yellow); font-size: 0.9rem; font-weight: 600;">Taking place</p>
+                </div>
+                <div class="market-card">
+                    <h4>Nigeria - Federal University Gusau</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; font-weight: 600;">On hold</p>
+                </div>
+                <div class="market-card">
+                    <h4>Japan - Nihon Fukushi University</h4>
+                    <p style="color: var(--neon-turquoise); font-size: 0.9rem; font-weight: 600;">Start: 09/26</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Timetable -->
+        <div class="section-box">
+            <h2>Timetable</h2>
+            <h3>2024 / 2025</h3>
+            <p>Study 1 Theoretical Framework and Literature Review; Data collection in Brazil; Study 1 Data analysis[cite: 8].</p>
+            <h3>2026</h3>
+            <p>Study 2 Theoretical Framework and Literature Review; Data collection in multiple countries; Study 2 Data analysis; Study 1 Manuscript; Study 2 Manuscript + reports on demand[cite: 8].</p>
+            <h3>2027</h3>
+            <p>Study 3 Theoretical Framework and Literature Review; Study 3 Data analysis; Study 3 Manuscript + reports on demand[cite: 8].</p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Ana Kazz. Built with a focus on <span>strategy and innovation</span>.</p>
+    </footer>
+
+</body>
+</html>
