@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ana Kazz | Research & Sport</title>
+    <title>The Research | Ana Kazz</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -89,250 +89,103 @@
             color: var(--neon-turquoise);
         }
 
-        /* Hero Section */
-        .hero {
-            max-width: 1200px;
+        /* Main Container */
+        .container {
+            max-width: 1000px;
             margin: 9rem auto 5rem;
             padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1.8fr 1fr;
-            gap: 4rem;
-            align-items: center;
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            line-height: 1.05;
+        .page-title {
+            font-size: 3rem;
             margin-bottom: 1.5rem;
             color: var(--text-main);
         }
 
-        .hero-content h1 span {
+        .page-title span {
             color: var(--neon-yellow);
-            background: #1a1a00;
-            padding: 0 5px;
         }
 
-        .hero-content p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
+        .section-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
         }
 
-        .btn-group {
+        .section-box h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--neon-green);
             display: flex;
+            align-items: center;
             gap: 1rem;
         }
 
-        .btn {
+        .section-box h3 {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--neon-turquoise);
+        }
+
+        .section-box p, .section-box li {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-box ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .markets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .market-card {
+            background: #1a1a1a;
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+        }
+
+        .market-card h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-back {
             display: inline-block;
-            background: var(--neon-green);
-            color: #000 !important;
-            padding: 0.85rem 1.75rem;
-            border-radius: 0px;
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 0.05em;
-            transition: transform 0.1s, background 0.2s;
-            text-align: center;
-        }
-
-        .btn:hover {
-            background: #00cc52;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
             background: transparent;
-            color: var(--neon-turquoise) !important;
+            color: var(--neon-turquoise);
             border: 2px solid var(--neon-turquoise);
-        }
-
-        .btn-outline:hover {
-            background: var(--neon-turquoise);
-            color: #000 !important;
-        }
-
-        .btn-join {
-            display: block;
-            width: 100%;
-            background-color: #000000;
-            color: var(--neon-green) !important;
-            border: 2px solid var(--neon-green);
-            text-align: center;
-            padding: 0.8rem 1rem;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
             font-weight: 700;
             text-transform: uppercase;
             font-size: 0.85rem;
-            letter-spacing: 0.05em;
-            text-decoration: none;
-            margin-top: 1rem;
+            margin-bottom: 2rem;
             transition: background 0.2s, color 0.2s;
         }
 
-        .btn-join:hover {
-            background-color: var(--neon-green);
-            color: #000000 !important;
-            text-decoration: none;
+        .btn-back:hover {
+            background: var(--neon-turquoise);
+            color: #000;
         }
 
-        .hero-img-wrapper {
-            position: relative;
-        }
-
-        .hero-img-wrapper::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
+        .content-img {
             width: 100%;
-            height: 100%;
-            border: 2px solid var(--neon-turquoise);
-            z-index: -1;
-        }
-
-        .hero-img img {
-            width: 100%;
-            aspect-ratio: 4/5;
-            object-fit: cover;
-            filter: grayscale(20%) contrast(110%);
-        }
-
-        /* Sections */
-        section {
-            max-width: 1200px;
-            margin: 0 auto 6rem;
-            padding: 0 2rem;
-        }
-
-        section h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        section h2::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: var(--border);
-        }
-
-        section h2 span {
-            color: var(--neon-green);
-        }
-
-        /* Card Grid */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            padding: 2rem;
-            position: relative;
-            transition: border-color 0.2s;
-        }
-
-        .card:hover {
-            border-color: var(--neon-yellow);
-        }
-
-        .card-tag {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: var(--neon-turquoise);
-            margin-bottom: 0.75rem;
-            display: block;
-            letter-spacing: 0.1em;
-        }
-
-        .card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--text-main);
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .card a {
-            color: var(--neon-green);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .card a:hover {
-            text-decoration: underline;
-        }
-
-        .news-img-small {
-            width: 100%;
-            max-height: 180px;
+            max-height: 400px;
             object-fit: cover;
             border-radius: 4px;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             border: 1px solid var(--border);
-        }
-
-        /* YouTube Banner & Playlist */
-        .youtube-banner {
-            background: linear-gradient(135deg, #0f172a 0%, #050505 100%);
-            border: 2px solid var(--neon-yellow);
-            padding: 3rem 2rem;
-        }
-
-        .youtube-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-
-        .youtube-banner h2 {
-            border: none;
-            margin-bottom: 0.5rem;
-            font-size: 2.2rem;
-            color: var(--neon-yellow);
-        }
-
-        .youtube-banner p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-        }
-
-        .playlist-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%;
-            height: 0;
-            background: #000;
-            border: 1px solid var(--border);
-        }
-
-        .playlist-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
         }
 
         /* Footer */
@@ -347,24 +200,6 @@
         footer span {
             color: var(--neon-green);
         }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero {
-                grid-template-columns: 1fr;
-                margin-top: 7rem;
-            }
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            .nav-links {
-                display: none;
-            }
-            .youtube-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
     </style>
 </head>
 <body>
@@ -372,253 +207,111 @@
     <!-- Header -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">Ana Kazz<span>.</span></a>
+            <a href="index.html" class="logo">Ana Kazz<span>.</span></a>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#research">The International Research</a></li>
-                <li><a href="#articles">Articles</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="#youtube">YouTube</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#research">The International Research</a></li>
+                <li><a href="index.html#articles">Articles</a></li>
+                <li><a href="index.html#news">News</a></li>
+                <li><a href="index.html#youtube">YouTube</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- Hero -->
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>football national teams <span>fan culture worldwide</span></h1>
-                <p>Investigating sports consumption behavior, identities, and engagement strategies across women's and men's ecosystems.</p>
-                <div class="btn-group">
-                    <a href="#articles" class="btn">Explore Research</a>
-                    <a href="#youtube" class="btn btn-outline">Watch Chat</a>
+    <!-- Content -->
+    <main class="container">
+        <a href="index.html#research" class="btn-back">&larr; Back to Home</a>
+        
+        <h1 class="page-title">The New Dimension of <span>Football Fandom</span></h1>
+        <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 1.2rem;">Detailed overview of the doctoral research project on global football fan consumption behavior and inclusive dynamics[cite: 3].</p>
+
+        <!-- Imagem ilustrativa solicitada -->
+        <img src="chartpesquisa.jpg" alt="Research Chart Overview" class="content-img">
+
+        <!-- 1 -->
+        <div class="section-box">
+            <h2>The New Dimension of Football Fandom is Inclusive!</h2>
+            <p>Original idea developed by Ana CPR Costa. Implementation must be previously agreed with the author[cite: 2].</p>
+        </div>
+
+        <!-- 2 -->
+        <div class="section-box">
+            <h2>A PhD Academic Journey in All Continents with a Deep Dive in Brazil</h2>
+            <p>Started at the German Sport University and continued at Pontifical Catholic University of Rio de Janeiro (PUC-Rio)[cite: 3].</p>
+            <ul>
+                <li>Applies theories from economics, sociology, and marketing to assess markets in different continents[cite: 3].</li>
+                <li>Uses quantitative and qualitative methodology (surveys, focus groups with fans, and interviews with key football stakeholders)[cite: 3].</li>
+                <li>Investigates the consumer profiles of women's and men's football national teams fans (socio-demographics, behaviors, and image)[cite: 3].</li>
+                <li>Delivers comparative insights across the assessed markets[cite: 3].</li>
+            </ul>
+        </div>
+
+        <!-- 3 -->
+        <div class="section-box">
+            <h2>Problems & Motivations</h2>
+            <ul>
+                <li>Women's Football (WF) and Men's Football (MF) follow different development pathways, reflected in distinct fan base profiles[cite: 4].</li>
+                <li>Academic knowledge about WF is scarce, especially when it comes to fans and the perceived image of the sport[cite: 4].</li>
+                <li>There is untapped potential for social and business transformation in football by fostering inclusive studies[cite: 4].</li>
+                <li>A global and comparative perspective on fans' consumption behaviour pushes this development, preventing WF from being appropriated by a discourse of hegemonic masculinity[cite: 4].</li>
+            </ul>
+        </div>
+
+        <!-- 4 -->
+        <div class="section-box">
+            <h2>1 Research Project Made of 3 Separate Studies</h2>
+            <h3>Study 1</h3>
+            <p>Fans' connection to the Brazilian football teams (16 interviews with stakeholders, 5 focus groups with fans, 834 fans responded to an online survey)[cite: 5].</p>
+            <h3>Study 2</h3>
+            <p>Global X-ray of the consumption behaviour profile of national teams' football fans via online surveys in different countries[cite: 5].</p>
+            <h3>Study 3</h3>
+            <p>The perceived image of national teams: an international comparison via online surveys in different countries[cite: 5].</p>
+        </div>
+
+        <!-- 5 -->
+        <div class="section-box">
+            <h2>Markets*</h2>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">*Partner researchers from this institution[cite: 7].</p>
+            <div class="markets-grid">
+                <div class="market-card">
+                    <h4>Brazil - PUC-Rio</h4>
+                    <p style="color: var(--neon-green); font-size: 0.9rem; font-weight: 600;">Done</p>
+                </div>
+                <div class="market-card">
+                    <h4>Australia - Curtin University & Football Supporters Association Australia</h4>
+                    <p style="color: var(--neon-green); font-size: 0.9rem; font-weight: 600;">Done</p>
+                </div>
+                <div class="market-card">
+                    <h4>Germany - German Sport University</h4>
+                    <p style="color: var(--neon-yellow); font-size: 0.9rem; font-weight: 600;">Taking place</p>
+                </div>
+                <div class="market-card">
+                    <h4>USA - Widener University</h4>
+                    <p style="color: var(--neon-yellow); font-size: 0.9rem; font-weight: 600;">Taking place</p>
+                </div>
+                <div class="market-card">
+                    <h4>Nigeria - Federal University Gusau</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; font-weight: 600;">On hold</p>
+                </div>
+                <div class="market-card">
+                    <h4>Japan - Nihon Fukushi University</h4>
+                    <p style="color: var(--neon-turquoise); font-size: 0.9rem; font-weight: 600;">Data collection will start soon</p>
                 </div>
             </div>
-            <div class="hero-img-wrapper">
-                <div class="hero-img">
-                    <img src="fotohome.png" alt="Ana Kazz">
-                </div>
-            </div>
-        </section>
+        </div>
 
-        <!-- About Me -->
-        <section id="about">
-            <h2><span>01.</span> About Me</h2>
-            <div style="background: var(--surface); border: 1px solid var(--border); padding: 2.5rem;">
-                <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 1.5rem;">
-                    Sport has always been an omnipresent ingredient in my life: a lifestyle, a social environment, and a powerful vehicle for positive change. As a PhD candidate at PUC-Rio and a consultant with over 20 years of experience in project management, communications, and marketing, I bridge the gap between academic research and operational reality to help the sports industry grow sustainably and inclusively.
-                </p>
-                <a href="https://www.linkedin.com/in/anakazz/" target="_blank" class="btn" style="background: var(--neon-turquoise); color: #000 !important;">Connect on LinkedIn &nearr;</a>
-            </div>
-        </section>
+        <!-- 6 -->
+        <div class="section-box">
+            <h2>Timetable</h2>
+            <h3>2024 / 2025</h3>
+            <p>Study 1 Theoretical Framework and Literature Review; Data collection in Brazil; Study 1 Data analysis[cite: 8].</p>
+            <h3>2026</h3>
+            <p>Study 2 Theoretical Framework and Literature Review; Data collection in multiple countries; Study 2 Data analysis; Study 1 Manuscript; Study 2 Manuscript + reports on demand[cite: 8].</p>
+            <h3>2027</h3>
+            <p>Study 3 Theoretical Framework and Literature Review; Study 3 Data analysis; Study 3 Manuscript + reports on demand[cite: 8].</p>
+        </div>
 
-        <!-- The International Research -->
-        <section id="research">
-            <h2><span>02.</span> The International Research</h2>
-            <div style="background: var(--surface); border: 1px solid var(--border); padding: 2.5rem; margin-bottom: 3rem;">
-                <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                    This ongoing doctoral study investigates global football fan consumption behavior, comparing national teams across different cultural and structural ecosystems. By bridging quantitative psychographic metrics (such as the Psychological Continuum Model) with fandom analytics, the research explores what drives stadium attendance, fan identities, and engagement strategies across both women's and men's football.
-                </p>
-                
-                <!-- Chamada de Financiamento (Self-funded) -->
-                <div style="background: rgba(255, 238, 0, 0.05); border-left: 4px solid var(--neon-yellow); padding: 1.5rem; margin-bottom: 2rem;">
-                    <p style="color: var(--text-main); font-size: 1rem; margin-bottom: 1rem;">
-                        This international research is currently <strong>self-funded</strong>. To expand data collection and drive this inclusive initiative forward, financial support and partnerships are essential. If you or your organization would like to support or collaborate, let's connect!
-                    </p>
-                    <a href="mailto:ana.costa@phd.iag.puc-rio.br" class="btn" style="background: var(--neon-yellow); color: #000 !important;">Support / Email Me &rarr;</a>
-                </div>
-
-                <a href="research.html" class="btn">Read More &rarr;</a>
-            </div>
-
-            <!-- Data Collection Updates -->
-            <h2><span>02.1</span> Data Collection Updates</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <span class="card-tag" style="color: var(--neon-green);">🇧🇷 Brazil</span>
-                    <h3>PUC Rio</h3>
-                    <p style="color: var(--neon-turquoise); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">Finished</p>
-                    <p style="font-size: 1.1rem; color: var(--text-main);">836 respondents</p>
-                </div>
-                <div class="card">
-                    <span class="card-tag" style="color: var(--neon-green);">🇦🇺 Australia</span>
-                    <h3>Curtin University</h3>
-                    <p style="color: var(--neon-turquoise); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">Finished</p>
-                    <p style="font-size: 1.1rem; color: var(--text-main);">640 respondents</p>
-                </div>
-                <div class="card">
-                    <span class="card-tag" style="color: var(--neon-yellow);">🇩🇪 Germany</span>
-                    <h3>Deutsche Sporthochschule Köln</h3>
-                    <p style="color: var(--neon-yellow); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">In Progress</p>
-                    <p style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.5rem;">140 respondents</p>
-                    <a href="https://www.soscisurvey.de/Fussballfans-Studie/" target="_blank" class="btn-join">Join Now &rarr;</a>
-                </div>
-                <div class="card">
-                    <span class="card-tag" style="color: var(--neon-yellow);">🇺🇸 USA</span>
-                    <h3>Widener University</h3>
-                    <p style="color: var(--neon-yellow); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">In Progress</p>
-                    <p style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.5rem;">345 respondents</p>
-                    <a href="https://forms.gle/WkJBHF8GHo2joQBZA" target="_blank" class="btn-join">Join Now &rarr;</a>
-                </div>
-                <div class="card">
-                    <span class="card-tag" style="color: var(--neon-turquoise);">🇯🇵 Japan</span>
-                    <h3>Fukushi University</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">Will start soon</p>
-                    <p style="font-size: 1rem; color: var(--text-muted);">Preparation phase</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Articles -->
-        <section id="articles">
-            <h2><span>03.</span> Articles & Research</h2>
-            <div class="card-grid">
-                
-                <div class="card">
-                    <span class="card-tag">Research • Upcoming</span>
-                    <img src="onlyif.jpg" alt="Only If Research" class="news-img-small">
-                    <h3>Stadium occupancy by fans of Brazilian national teams</h3>
-                    <p>This unpublished study reveals that four distinct fan groups of women's and men's national teams—"Only if Diverse," "Still in Love with the Game," "Only if Masculine and Inspiring," and "Almost Gone"—are willing to attend FIFAWWC27 stadiums. It details their unique motivations, from experience design to men's team disappointment driving attendance.</p>
-                    <span style="color: var(--neon-yellow); font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">stay tuned</span>
-                </div>
-
-                <div class="card">
-                    <span class="card-tag">Research • Upcoming</span>
-                    <h3>The value of the Brazilian women's national team fan</h3>
-                    <p>It employs a method that calculates the value of each women's national team fan over a given period of time (inspired by Customer Lifetime Value), empirically proving the higher value of female fans and those who are sympathetic to the LGBTQIA+ community.</p>
-                    <span style="color: var(--neon-yellow); font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">stay tuned</span>
-                </div>
-
-                <div class="card">
-                    <span class="card-tag">Research • Upcoming</span>
-                    <h3>Comparing Brazilian Team Fans</h3>
-                    <p>Comparing Brazilian team fans reveals key insights: passion over consumption, fan convergences, distinct match experiences, and authenticity views. It highlights how masculine, neoliberal, and eurocentric hegemonies shape the game through colonial dynamics. Finally, women's football emerges as a sustainable future for the sport.</p>
-                    <span style="color: var(--neon-yellow); font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">stay tuned</span>
-                </div>
-
-                <div class="card">
-                    <span class="card-tag">2024 • Springer</span>
-                    <h3>Management of Sport Organizations</h3>
-                    <p>Main author of the chapter on Brazil in the book “Management of sport organizations at the crossroad of responsibility and sustainability: perceptions, practices, and prospects around the world".</p>
-                    <a href="https://link.springer.com/chapter/10.1007/978-3-031-52489-9_5" target="_blank">Read More &rarr;</a>
-                </div>
-
-                <div class="card">
-                    <span class="card-tag">2023 • Soccer & Society</span>
-                    <h3>Brand Building and Image Perception</h3>
-                    <p>Main author of the article "Brand building and image perception in women football: a cross-country comparison between Brazil and Germany”.</p>
-                    <a href="https://www.tandfonline.com/doi/full/10.1080/14660970.2023.2300074" target="_blank">Read More &rarr;</a>
-                </div>
-
-                <div class="card">
-                    <span class="card-tag">2022 • IJ SMM</span>
-                    <h3>Personal Brand Construction</h3>
-                    <p>Main author of the article "Determinants of personal brand construction of national football players on Instagram” (Vol. 22, Nos. 3/4).</p>
-                    <a href="https://www.inderscienceonline.com/doi/abs/10.1504/IJSMM.2022.124046" target="_blank">Read More &rarr;</a>
-                </div>
-
-                <div class="card">
-                    <span class="card-tag">2022 • Springer / Palgrave</span>
-                    <h3>Women’s Football in Latin America</h3>
-                    <p>Editor and author of three chapters of the book "Women’s Football in Latin America - Volume 1 - Brazil" with Jorge Dorfman Knijnik.</p>
-                    <a href="https://link.springer.com/book/10.1007/978-3-031-07976-4#toc" target="_blank">Read More &rarr;</a>
-                </div>
-
-                <div class="card">
-                    <span class="card-tag">8/2020 • SP Football Fed.</span>
-                    <h3>Personal Brand & Fan Management</h3>
-                    <p>Proponent and director of the Personal Brand Management of Athletes and Fan Management program for women's football in São Paulo.</p>
-                    <a href="https://futebolpaulista.com.br/Noticias/Detalhe.aspx?Noticia=17287" target="_blank">Read More &rarr;</a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- News -->
-        <section id="news">
-            <h2><span>04.</span> News & Updates</h2>
-            <div class="card-grid">
-                
-                <div class="card">
-                    <span class="card-tag">Talks & seminars</span>
-                    <img src="macromkt.jpg" alt="Macro Mkt Research" class="news-img-small">
-                    <h3>Reflections on Research & Feminine Presence</h3>
-                    <p>Driven by curiosity, my research explores the feminine in sports—specifically, football fan consumption profiles that include women. Receiving this certificate brings back powerful connections and learnings, including a key finding from my data: fans recognizing that colonial logic plays a starring role in our football.</p>
-                    <a href="https://lnkd.in/p/d6nnvQKV" target="_blank">Read More &rarr;</a>
-                </div>
-
-                <div class="card">
-                    <span class="card-tag">Talks & seminars</span>
-                    <h3>Chat with Agência Ruua</h3>
-                    <p>It was in 2016 that #football came into my life to transform it.<br>
-                    This happened through the women's game and the inspiring example of athletes like Tamires and Érika Cristiano.<br>
-                    In this delightful chat with the team at Agência Ruua, I was able to share stories from this academic research journey on #womensfootball and exchange rich experiences.<br>
-                    Thanks for the opportunity and for capturing the moment!</p>
-                    <a href="https://www.youtube.com/watch?v=oVHjWzJRveo&feature=youtu.be" target="_blank">See More &rarr;</a>
-                </div>
-
-                <div class="card">
-                    <span class="card-tag">Talks & seminars</span>
-                    <img src="palestrapaola.jpg" alt="Palestra Paola" class="news-img-small">
-                    <h3>Empowering Women in Sports & Entrepreneurship</h3>
-                    <p>#womensfootball reinvigorates the sport with inclusion and inspiring role models, extending far beyond the pitch. Discussing the FIFA Women's World Cup™ highlighted a key 4HE tourism insight: the 2027 tournament must create entrepreneurial opportunities for women across Brazil, channeling athletes' powerful stories to break barriers together.</p>
-                    <a href="https://lnkd.in/p/dxmjJYkb" target="_blank">Read More &rarr;</a>
-                </div>
-
-                <div class="card">
-                    <span class="card-tag">Congress Presentation</span>
-                    <img src="26_congresso.jpg" alt="Presentation at 3S Congress" class="news-img-small">
-                    <h3>Presentation at 3S (Strategy Congress)</h3>
-                    <p>Presentation on research regarding how to attract fans to the FIFA Women's World Cup 2027, which will take place in Brazil.</p>
-                    <a href="https://lnkd.in/p/dn7xdEAJ" target="_blank">Read More &rarr;</a>
-                </div>
-
-                <div class="card">
-                    <span class="card-tag">Research Update</span>
-                    <img src="chartpesquisa.jpg" alt="Research Chart" class="news-img-small">
-                    <h3>Football Fans Research Insights</h3>
-                    <p>New data and metrics regarding fan engagement behavior and strategic sports consumption dynamics.</p>
-                    <a href="https://lnkd.in/p/d5fD-rnc" target="_blank">Read More &rarr;</a>
-                </div>
-
-                <div class="card">
-                    <span class="card-tag">Webinar Recording</span>
-                    <h3>Football Fans Research Discussion</h3>
-                    <p>If you are interested in updates on my football fans research, check out the recording of this webinar. Special thanks to De Waele Jean-Michel for the invitation, and to the participants for the high-level discussion.</p>
-                    <a href="https://www.youtube.com/watch?v=EH4nb0AxLaU" target="_blank">See More &rarr;</a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- YouTube / Chat -->
-        <section id="youtube">
-            <div class="youtube-banner">
-                <div class="youtube-header">
-                    <div>
-                        <h2>Video & Chats</h2>
-                        <p>Check out my playlist and channel for talks, interviews, and discussions on sports management and fan behavior.</p>
-                    </div>
-                    <div>
-                        <a href="https://www.youtube.com/@anakazzy" target="_blank" class="btn" style="background: var(--neon-yellow); display: inline-block; text-align: center; color: #000 !important;">Visit Channel &nearr;</a>
-                    </div>
-                </div>
-                <!-- YouTube Playlist Embed -->
-                <div class="playlist-container">
-                    <iframe src="https://www.youtube.com/embed/videoseries?list=PLSuv5YPW9lCfi0OugSdy12me2a_2qzLM2" title="YouTube playlist" allowfullscreen></iframe>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact">
-            <h2><span>05.</span> Contact</h2>
-            <div style="background: var(--surface); border: 1px solid var(--border); padding: 2.5rem;">
-                <p style="color: var(--text-muted); margin-bottom: 1rem;">Open for research collaborations, sports strategy consulting, speaking engagements, and academic discussions.</p>
-                <p style="color: var(--text-main); font-weight: 600;">Email: <span style="color: var(--neon-turquoise);">ana.costa@phd.iag.puc-rio.br</span></p>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
